@@ -1,0 +1,293 @@
+
+*{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+body{
+    box-sizing: border-box;
+    row-gap: 6vh;
+    padding: 10vh 0;
+    width: 98vw;
+    margin:0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url("https://media.istockphoto.com/id/1161394969/photo/autumn-background.jpg?s=170667a&w=0&k=20&c=RmQGTGQcG1iblwWZyxodx70Z_SvX20_6m5S_pbeN6MU=")no-repeat center center;
+    background-size: 120% 120%;
+    animation: shrink 15s infinite alternate;
+    min-height: 100vh;
+}
+@keyframes shrink {
+    0%{
+        background-size: 120% 120%;
+    }
+    100%{
+        background-size: 100% 100%;
+    }
+}
+
+.box{
+    display: flex;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.57);
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    width: 45vw;
+    height: 15vh;
+    border-radius: 70px;
+    text-align: center;
+    background: rgba(239, 157, 64, 0.821);    
+}
+.title{
+    color: #FFF;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+.leaf{
+    height: 12vh;
+    width: 7.5vw;
+}
+.box2{
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.57);
+    background-color: white;
+    width: 16vw;
+    border-radius: 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    column-gap: 10px;
+    height: 10vh;
+    position: relative;
+}
+.heading2{
+    position: absolute;
+    z-index: 2;
+    font-size: 1.2rem;
+    margin-left: 3vw;
+
+}
+input{
+    padding-top: 0px;
+    display: none;
+    top: 1.1vh;
+    left: 13px;
+    font-size: 1.3rem;
+    padding-left: 20px;
+    position: absolute;
+    border-radius: 5px;
+    height: 7vh;
+    width: 52vw;
+    border: none;
+    background-color: rgba(127, 123, 123, 0.252);
+}
+.box2 button{
+    width: 4.5vw;
+    height: 10vh;
+    border-radius: 40%;
+    background-color: #35BC43;
+    border: none;
+    position: absolute;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box2 #newtaskbtn{
+    z-index: 2;
+}
+.box2 button svg{
+    position: absolute;
+    height: 6vh;
+    width: 3vw;
+}
+.expand form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit{
+    display: none;
+}
+.expand{
+    width: 62vw;
+    animation: expand 0.5s;
+}
+
+@keyframes expand{
+    0%{
+        width: 16vw;
+    }
+    100%{
+        width: 62vw;
+    }
+}
+
+.expand .heading2{
+    display: none;
+}
+.expand input{
+    display: flex;
+    border: none;
+}
+.expand #newtaskbtn{
+    opacity: 0;
+    z-index: 1;
+}
+.expand #submit{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.expand #submit .tick{
+    display: inline-block;
+    height: 3.2vh;
+    width: 3vw;
+    position: absolute;
+    top: 3.4vh;
+    left: 0.8vw;
+}
+.tasks{
+    height: auto;
+
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+}
+li{
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.68);
+    width: 65vw;
+    padding: 2.5vh;
+    list-style-type: none;
+    display: flex;
+    align-items:flex-start;
+    position: relative;
+    justify-content: flex-start;
+    
+}
+.task{
+    position: relative;
+    left: 2vw;
+    width: 80%;
+    display: flex;
+    font-size: 1.3rem;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+.edit{
+    position: absolute;
+    top:3.1vh;
+    right: 5vw; 
+    height: 4.4vh;
+    width: 3vw;
+}
+.delete{
+    position: absolute;
+    top: 0.8vh;
+    right: 1vw;
+    height: 9vh;
+    width: 4vw;
+}
+.progress{
+    position: relative;
+    top:0.6vh;
+    background-color: red;
+    height: 3vh;
+    width: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tick{
+    position: absolute;
+    left: 0.3vw;
+    height: 5vh;
+    width: 2.3vw;
+    z-index: 2;
+    display: none;
+}
+.ongoing{
+    position: absolute;
+    top: -2.5vh;
+    left: 0.3vw;
+    height: 9vh;
+    width: 2.5vw;
+    z-index: 2;
+    display: none;
+}
+
+.hideEdit .edit, .hideEdit .progress, .hideEdit .task{
+    z-index: -1;
+    display: none;
+}
+.hideEdit input{
+    padding:0;
+    padding-left:4vw;
+    top:0;
+    display: flex;
+    position: relative;
+    height: 6vh;
+}
+.hideEdit #submit{
+    height: 6.2vh;
+    width: 2.8vw;
+    position:absolute;
+    z-index: 3;
+    border-radius: 10px;
+    right:5vw; 
+    top: 2.3vh;
+    border: none;
+    display: flex;
+    background-color: #35BC43;
+    align-items: center;
+    justify-content: center;
+}
+.hideEdit .tick{
+    position: absolute;
+    top: 1.9vh;
+    left: 0.5vw;
+    height: 2.5vh;
+    width: 1.8vw;
+    z-index: 2;
+    display: inline-block;
+}
+.progressbtn{
+    position: absolute;
+    z-index: 1;
+    height: 6vh;
+    width: 3vw;
+    border-radius: 7px;
+    position: absolute;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.412);
+    background-color: rgb(255, 255, 255);
+}
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.comment{
+    height: 22vh;
+    width: 55vw;
+    border: 1px solid rgba(42, 42, 42, 0.498);
+    border-radius: 15px;
+    background-color: rgba(42, 42, 42, 0.437);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.hide{
+    display: none;
+    height: 0px;
+}
